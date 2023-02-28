@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>{% block title %}WELCOME{% endblock %}</h1>
+
+    {% for x in shoes %}
+
+        <div class="shoes">
+
+
+            <p>{{ x['title'] }}</p>
+
+            <p>{{ x['image'] }}</p>
+
+            <p>{{ x['price'] }}</p>
+
+
+        <a href="{{ url_for("edit", id=x["id"])  }}">Edit product</a>
+
+            <br>
+
+        <a href="{{ url_for("delete", id=x["id"])  }}">Delete product</a>
+
+        </div>
+
+    {% endfor %}
+
+
+
+
+{% endblock %}
